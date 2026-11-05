@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แผนกวิชาคอมพิวเตอร์ - วิทยาลัยเทคนิคนางรอง</title>
+    <!-- Google Fonts: Prompt -->
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #8B0000; /* โทนสีแดงเข้ม */
+            --secondary-color: #2c3e50;
+            --bg-color: #f9f9f9;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Prompt', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #5a0000);
+            color: var(--white);
+            padding: 2.5rem 1rem;
+            text-align: center;
+        }
+
+        /* สไตล์สำหรับตราวิทยาลัย */
+        .college-logo {
+            width: 100px;         /* ขนาดความกว้างของตรา */
+            height: 100px;        /* ขนาดความสูงของตรา */
+            object-fit: contain;  /* รักษาอัตราส่วนรูปตราไม่ให้เบี้ยว */
+            margin-bottom: 1rem;  /* ระยะห่างระหว่างตรากับชื่อวิทยาลัย */
+            background: var(--white);
+            border-radius: 50%;   /* ทำเป็นวงกลม (ถ้าต้องการสี่เหลี่ยมปกติให้ลบออกได้) */
+            padding: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        nav {
+            background-color: var(--secondary-color);
+            display: flex;
+            justify-content: center;
+            padding: 0.8rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffcccc;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Section Styling */
+        section {
+            background: var(--white);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Computer Department Highlight */
+        .computer-highlight {
+            border-left: 5px solid var(--primary-color);
+            background: #fff5f5;
+        }
+
+        /* Major Grid */
+        .major-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .major-card {
+            background: var(--white);
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+        }
+
+        .major-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+
+        /* กำหนดขนาดรูปภาพในการ์ดกิจกรรมให้เท่ากันทุกรูป */
+        .major-card img {
+            width: 100%;
+            height: 200px;       
+            object-fit: cover;   
+            border-radius: 6px;
+            margin-bottom: 1rem;
+        }
+
+        .major-card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 0.8rem;
+        }
+
+        /* Social / PR Links Section */
+        .pr-links {
+            text-align: center;
+        }
+
+        .btn-social {
+            display: inline-block;
+            background-color: #1877f2; /* สี Facebook */
+            color: var(--white);
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 0.5rem;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn-social:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header พร้อมใส่ตราวิทยาลัย -->
+    <header>
+        <!-- เปลี่ยน path ของรูปภาพตรง src="photo/logo.png" เป็นชื่อไฟล์ตราวิทยาลัยจริงของคุณ -->
+        <img src="photo/4444.jfif" alt="ตราวิทยาลัยเทคนิคนางรอง" class="college-logo">
+        <h1>วิทยาลัยเทคนิคนางรอง</h1>
+        <p>Nangrong Technical College - นำวิชาการ ประสานคุณธรรม สู่ความเป็นเลิศทางวิชาชีพ</p>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#computer-dept">แผนกคอมพิวเตอร์</a>
+        <a href="#all-departments">สาขาวิชาทั้งหมด</a>
+        <a href="#college-activities">กิจกรรมวิทยาลัย</a>
+        <a href="#pr-section">เพจประชาสัมพันธ์</a>
+    </nav>
+
+    <div class="container">
+
+        <!-- แผนกวิชาคอมพิวเตอร์ (ไฮไลต์หลัก) -->
+        <section id="computer-dept" class="computer-highlight">
+            <h2>💻 แผนกวิชาคอมพิวเตอร์ (Computer Department)</h2>
+            <p>มุ่งเน้นผลิตและพัฒนากำลังคนด้านเทคโนโลยีสารสนเทศและการสื่อสารให้มีทักษะความรู้ความสามารถทางด้านฮาร์ดแวร์ ซอฟต์แวร์ การพัฒนาเว็บไซต์ ระบบฐานข้อมูล และงานกราฟิกดีไซน์ พร้อมปฏิบัติงานจริงในยุคดิจิทัล</p>
+            <br>
+            <h3>หลักสูตรที่เปิดสอนในแผนกคอมพิวเตอร์:</h3>
+            <ul>
+                <li><strong>ระดับประกาศนียบัตรวิชาชีพ (ปวช.):</strong> สาขางานเทคโนโลยีสารสนเทศ</li>
+                <li><strong>ระดับประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.):</strong> สาขาวิชาเทคโนโลยีสารสนเทศ (สาขางานพัฒนาซอฟต์แวร์และระบบเว็บ / เครือข่าย)</li>
+            </ul>
+        </section>
+
+        <!-- รายละเอียดแผนกต่างๆ ที่เปิดสอนในวิทยาลัย -->
+        <section id="all-departments">
+            <h2>🏛️ สาขาวิชาและแผนกวิชาที่เปิดสอนในวิทยาลัย</h2>
+            <div class="major-grid">
+                <div class="major-card">
+                    <h3>⚙️ แผนกวิชาช่างยนต์</h3>
+                    <p>ศึกษาเกี่ยวกับการซ่อมบำรุงรถยนต์ รถจักรยานยนต์ ระบบเครื่องยนต์ ระบบส่งกำลัง และยานยนต์สมัยใหม่</p>
+                </div>
+                <div class="major-card">
+                    <h3>⚡ แผนกวิชาช่างไฟฟ้ากำลัง</h3>
+                    <p>เรียนรู้เกี่ยวกับการติดตั้งเดินสายไฟฟ้า ระบบควบคุมไฟฟ้า เครื่องกลไฟฟ้า และพลังงานทดแทน</p>
+                </div>
+                <div class="major-card">
+                    <h3>🔧 แผนกวิชาช่างกลโรงงาน</h3>
+                    <p>ศึกษาการใช้เครื่องมือกล งานเชื่อมโลหะ การเขียนแบบเครื่องกล และการควบคุมเครื่องจักร CNC</p>
+                </div>
+                <div class="major-card">
+                    <h3>🏗️ แผนกวิชาช่างก่อสร้าง /โยธา</h3>
+                    <p>เรียนรู้การออกแบบคำนวณโครงสร้าง งานเขียนแบบก่อสร้าง การประมาณราคา และควบคุมการก่อสร้าง</p>
+                </div>
+                <div class="major-card">
+                    <h3>💼 แผนกวิชาการบัญชี / บริหารธุรกิจ</h3>
+                    <p>ศึกษาด้านการทำบัญชี ระบบบัญชีคอมพิวเตอร์ การตลาดดิจิทัล และการจัดการธุรกิจสมัยใหม่</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- บล็อกกิจกรรมต่างๆ ของวิทยาลัยพร้อมรูปภาพขนาดเท่ากัน -->
+        <section id="college-activities">
+            <h2>🎉 กิจกรรมเด่นและบรรยากาศในวิทยาลัย</h2>
+            <p>กิจกรรมเสริมหลักสูตรและพัฒนาผู้เรียน เพื่อเสริมสร้างทักษะชีวิต ความสามัคคี และความเป็นมืออาชีพ</p>
+            
+            <div class="major-grid">
+                <!-- กิจกรรมที่ 1 -->
+                <div class="major-card">
+                    <img src="photo/1111.jfif" alt="แข่งขันทักษะวิชาชีพ">
+                    <h3>🏆 การแข่งขันทักษะวิชาชีพ</h3>
+                    <p>เปิดโอกาสให้นักเรียน นักศึกษา ได้แสดงความรู้ความสามารถ ประชันทักษะทางวิชาการและวิชาชีพ</p>
+                </div>
+
+                <!-- กิจกรรมที่ 2 -->
+                <div class="major-card">
+                    <img src="photo/2222.jfif" alt="ค่ายคุณธรรม">
+                    <h3>🤝 กิจกรรมปฐมนิเทศและค่ายคุณธรรม</h3>
+                    <p>เสริมสร้างความสัมพันธ์อันดีระหว่างเพื่อนร่วมชั้นเรียน ปลูกฝังคุณธรรม จริยธรรม</p>
+                </div>
+
+                <!-- กิจกรรมที่ 3 -->
+                <div class="major-card">
+                    <img src="photo/3333.jfif" alt="บริการวิชาการ">
+                    <h3>💻 โครงงานและบริการวิชาการสู่ชุมชน</h3>
+                    <p>นักศึกษาแผนกคอมพิวเตอร์และสาขาต่างๆ ได้นำความรู้มาประยุกต์ใช้ผ่านโครงงานไอที</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- โค้ดสำหรับใส่ลิงก์เพจประชาสัมพันธ์ -->
+        <section id="pr-section" class="pr-links">
+            <h2>📢 ติดตามข่าวสารและเพจประชาสัมพันธ์</h2>
+            <p>เชื่อมต่อกับพวกเราได้ผ่านช่องทางโซเชียลมีเดียหลักของวิทยาลัยและแผนกวิชา:</p>
+            <br>
+            <a href="https://share.google/csTnDsQUlJfM4yfEP" target="_blank" class="btn-social">📘 Facebook วิทยาลัย/แผนก</a>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 วิทยาลัยเทคนิคนางรอง (Nangrong Technical College) - All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
